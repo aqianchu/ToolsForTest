@@ -27,6 +27,12 @@ void CBase64Dialog::DoDataExchange(CDataExchange* pDX)
 	CDialogEx::DoDataExchange(pDX);
 }
 
+BOOL CBase64Dialog::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+	this->SetWindowText(_T("Base64º”Ω‚√‹"));
+	return TRUE;
+}
 
 BEGIN_MESSAGE_MAP(CBase64Dialog, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON1, &CBase64Dialog::OnBnClickedButton1)

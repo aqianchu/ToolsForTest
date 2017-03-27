@@ -16,7 +16,8 @@ public:
 
 protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
-
+	// 生成的消息映射函数
+	virtual BOOL OnInitDialog();
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButton1();

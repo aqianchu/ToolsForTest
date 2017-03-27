@@ -24,6 +24,13 @@ CURLEncodeEx::~CURLEncodeEx()
 {
 }
 
+BOOL CURLEncodeEx::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+	this->SetWindowText(_T("URL±à½âÂë"));
+	return TRUE;
+}
+
 void CURLEncodeEx::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);

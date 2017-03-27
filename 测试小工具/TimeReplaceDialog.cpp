@@ -25,7 +25,12 @@ void CTimeReplaceDialog::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
 }
-
+BOOL CTimeReplaceDialog::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+	this->SetWindowText(_T("Ê±¼ä×ª»»"));
+	return TRUE;
+}
 
 BEGIN_MESSAGE_MAP(CTimeReplaceDialog, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON4, &CTimeReplaceDialog::OnBnClickedButton4)
