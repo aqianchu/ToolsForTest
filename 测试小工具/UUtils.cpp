@@ -1,3 +1,4 @@
+#pragma once
 #include  "stdafx.h"
 #include "UUtils.h"
 //这是个类strCoding (strCoding.cpp文件)
@@ -203,7 +204,7 @@ string strCoding::UrlGB2312Decode(string str)
 {
 	string output = "";
 	char tmp[2];
-	int i = 0, idx = 0, ndx, len = str.length();
+	int i = 0, idx = 0, len = str.length();
 
 	while (i<len){
 		if (str[i] == '%'){
@@ -235,4 +236,65 @@ string strCoding::UrlUTF8Decode(string str)
 
 	return output;
 
+}
+
+char* CreateUTF8TextInitWithString(CString strValue)
+{
+	char *buffer = NULL;
+	int  length;
+
+#ifdef _UNICODE  
+	length = WideCharToMultiByte(CP_UTF8, 0, strValue, -1, NULL, 0, NULL, NULL);
+#else  
+	return NULL;
+#endif  
+	if (length <= 0)
+	{
+		return NULL;
+	}
+
+	buffer = new char[length];
+	if (buffer == NULL)
+	{
+		return NULL;
+	}
+
+	ZeroMemory(buffer, length);
+
+#ifdef _UNICODE  
+	WideCharToMultiByte(CP_UTF8, 0, strValue, -1, buffer, length, NULL, NULL);
+#else  
+	strcpy_s(buffer, length, strValue);
+#endif  
+
+	return buffer;
+}
+
+
+BOOL CreateString_InitWithUTF8Text(CString& str, char* pUTF8Text)
+{
+	if (NULL == pUTF8Text)
+	{
+		return FALSE;
+	}
+
+	int  unicodeLen = ::MultiByteToWideChar(CP_UTF8,
+		0,
+		pUTF8Text,
+		-1,
+		NULL,
+		0);
+
+	wchar_t*  pUnicode = new  wchar_t[unicodeLen + 1];
+	if (NULL == pUnicode)
+	{
+		return FALSE;
+	}
+
+	MultiByteToWideChar(CP_UTF8, 0, pUTF8Text, -1, (LPWSTR)pUnicode, unicodeLen);
+
+	str = pUnicode;
+
+	delete[]pUnicode;
+	return TRUE;
 }

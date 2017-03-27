@@ -98,6 +98,7 @@ BEGIN_MESSAGE_MAP(C测试小工具Dlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON31, &C测试小工具Dlg::OnBnClickedButton31)
 	ON_BN_CLICKED(IDC_BUTTON32, &C测试小工具Dlg::OnBnClickedButton32)
 	ON_BN_CLICKED(IDC_BUTTON33, &C测试小工具Dlg::OnBnClickedButton33)
+	ON_BN_CLICKED(IDC_BUTTON34, &C测试小工具Dlg::OnBnClickedButton34)
 END_MESSAGE_MAP()
 
 
@@ -459,4 +460,12 @@ void C测试小工具Dlg::OnBnClickedButton31()
 void C测试小工具Dlg::OnBnClickedButton33()
 {
 	ShellExecute(NULL, _T("open"), _T("calc.exe"), NULL, NULL, SW_SHOWNORMAL);
+}
+
+
+void C测试小工具Dlg::OnBnClickedButton34()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	CURLEncodeEx dialog;
+	dialog.DoModal();
 }

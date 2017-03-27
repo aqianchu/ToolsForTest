@@ -4,7 +4,7 @@
 
 #pragma once
 #include "afxwin.h"
-
+#include "URLEncodeEx.h"
 char * cstring2char(CString src);
 
 // C测试小工具Dlg 对话框
@@ -66,4 +66,5 @@ public:
 	afx_msg void OnBnClickedButton31();
 	afx_msg void OnBnClickedButton32();
 	afx_msg void OnBnClickedButton33();
+	afx_msg void OnBnClickedButton34();
 };

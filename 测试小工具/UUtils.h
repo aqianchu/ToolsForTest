@@ -1,10 +1,15 @@
 #pragma once  
-
+#include "stdafx.h"  
+#include <atlstr.h> // for CString  
+#include <lm.h>  
 #include <iostream>  
 #include <string>  
 #include <windows.h>  
 using namespace std;
-
+//CStringתchar*
+char* CreateUTF8TextInitWithString(CString strValue);
+//
+BOOL CreateString_InitWithUTF8Text(CString& str, char* pUTF8Text);
 class strCoding
 {
 public:

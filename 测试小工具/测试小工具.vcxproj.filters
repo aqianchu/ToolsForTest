@@ -39,6 +39,9 @@
     <ClInclude Include="URLEncodeEx.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CUtils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="测试小工具.cpp">
@@ -54,6 +57,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="URLEncodeEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CUtils.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
