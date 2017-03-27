@@ -108,10 +108,10 @@ void CTimeReplaceDialog::OnBnClickedButton3()
 	// TODO:  在此添加控件通知处理程序代码
 	CString str1, str2;
 	GetDlgItemText(IDC_EDIT1, str1);
-	if (str1.IsEmpty()) {
+	GetDlgItemText(IDC_EDIT2, str2);
+	if (str1.IsEmpty() || str2.IsEmpty()) {
 		return;
 	}
-	GetDlgItemText(IDC_EDIT2, str2);
 
 	GetDlgItem(IDC_EDIT1)->SetWindowTextW(str2);
 	GetDlgItem(IDC_EDIT2)->SetWindowTextW(str1);

@@ -48,6 +48,12 @@
     <ClInclude Include="IntUtils.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Base64Dialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="base64.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="测试小工具.cpp">
@@ -72,6 +78,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="IntUtils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Base64Dialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="base64.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
