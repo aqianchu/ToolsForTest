@@ -6,6 +6,7 @@
 #include "测试小工具.h"
 #include "测试小工具Dlg.h"
 #include "afxdialogex.h"
+#include "TimeReplaceDialog.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -99,6 +100,7 @@ BEGIN_MESSAGE_MAP(C测试小工具Dlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON32, &C测试小工具Dlg::OnBnClickedButton32)
 	ON_BN_CLICKED(IDC_BUTTON33, &C测试小工具Dlg::OnBnClickedButton33)
 	ON_BN_CLICKED(IDC_BUTTON34, &C测试小工具Dlg::OnBnClickedButton34)
+	ON_BN_CLICKED(IDC_BUTTON35, &C测试小工具Dlg::OnBnClickedButton35)
 END_MESSAGE_MAP()
 
 
@@ -467,5 +469,13 @@ void C测试小工具Dlg::OnBnClickedButton34()
 {
 	// TODO:  在此添加控件通知处理程序代码
 	CURLEncodeEx dialog;
+	dialog.DoModal();
+}
+
+
+void C测试小工具Dlg::OnBnClickedButton35()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	CTimeReplaceDialog dialog;
 	dialog.DoModal();
 }

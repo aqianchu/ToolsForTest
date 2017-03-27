@@ -91,6 +91,9 @@ void CURLEncodeEx::OnBnClickedButton1()
 	//delete pFileName;
 
 	UpdateData(true);
+	if (m_strEdit.IsEmpty()) {
+		return;
+	}
 	strCoding cstr;
 	char *sour = CString2char(m_strEdit);
 	string dst = cstr.UrlUTF8(sour);;
@@ -104,6 +107,9 @@ void CURLEncodeEx::OnBnClickedButton2()
 {
 	// TODO:  在此添加控件通知处理程序代码
 	UpdateData(true);
+	if (m_strEdit.IsEmpty()) {
+		return;
+	}
 	CString temp1 = m_strEdit;
 	strCoding str1;
 	string sour1 = CStringToString(temp1);
@@ -117,6 +123,9 @@ void CURLEncodeEx::OnBnClickedButton3()
 {
 	// TODO:  在此添加控件通知处理程序代码
 	UpdateData(true);
+	if (m_strEdit.IsEmpty()) {
+		return;
+	}
 	CString temp = m_strEdit;
 	m_strEdit = m_dstEdit;
 	m_dstEdit = temp;
