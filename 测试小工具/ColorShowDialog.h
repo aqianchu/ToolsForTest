@@ -7,7 +7,7 @@
 class CColorShowDialog : public CDialogEx
 {
 	DECLARE_DYNAMIC(CColorShowDialog)
-
+	
 public:
 	CColorShowDialog(CWnd* pParent = NULL);   // 标准构造函数
 	virtual ~CColorShowDialog();
@@ -20,6 +20,10 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
+	BOOLEAN flag;
+	const int TIME_NAME = 100;
 	afx_msg void OnBnClickedButton1();
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
 	CStatic m_picture;
+	afx_msg void OnBnClickedButton2();
 };
