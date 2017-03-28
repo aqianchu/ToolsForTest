@@ -103,6 +103,7 @@
   <ItemGroup>
     <ClInclude Include="base64.h" />
     <ClInclude Include="Base64Dialog.h" />
+    <ClInclude Include="ColorShowDialog.h" />
     <ClInclude Include="CUtils.h" />
     <ClInclude Include="IntUtils.h" />
     <ClInclude Include="Resource.h" />
@@ -117,6 +118,7 @@
   <ItemGroup>
     <ClCompile Include="base64.cpp" />
     <ClCompile Include="Base64Dialog.cpp" />
+    <ClCompile Include="ColorShowDialog.cpp" />
     <ClCompile Include="CUtils.cpp" />
     <ClCompile Include="IntUtils.cpp" />
     <ClCompile Include="stdafx.cpp">

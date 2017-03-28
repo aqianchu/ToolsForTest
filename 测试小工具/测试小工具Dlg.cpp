@@ -8,6 +8,7 @@
 #include "afxdialogex.h"
 #include "TimeReplaceDialog.h"
 #include "Base64Dialog.h"
+#include "ColorShowDialog.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -103,6 +104,7 @@ BEGIN_MESSAGE_MAP(C测试小工具Dlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON34, &C测试小工具Dlg::OnBnClickedButton34)
 	ON_BN_CLICKED(IDC_BUTTON35, &C测试小工具Dlg::OnBnClickedButton35)
 	ON_BN_CLICKED(IDC_BUTTON36, &C测试小工具Dlg::OnBnClickedButton36)
+	ON_BN_CLICKED(IDC_BUTTON37, &C测试小工具Dlg::OnBnClickedButton37)
 END_MESSAGE_MAP()
 
 
@@ -487,5 +489,13 @@ void C测试小工具Dlg::OnBnClickedButton36()
 {
 	// TODO:  在此添加控件通知处理程序代码
 	CBase64Dialog dialog;
+	dialog.DoModal();
+}
+
+
+void C测试小工具Dlg::OnBnClickedButton37()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	CColorShowDialog dialog;
 	dialog.DoModal();
 }
