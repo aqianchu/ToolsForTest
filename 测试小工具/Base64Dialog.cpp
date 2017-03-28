@@ -97,3 +97,26 @@ void CBase64Dialog::OnBnClickedButton3()
 	GetDlgItem(IDC_EDIT1)->SetWindowTextW(str2);
 	GetDlgItem(IDC_EDIT2)->SetWindowTextW(str1);
 }
+
+
+BOOL CBase64Dialog::PreTranslateMessage(MSG* pMsg)
+{
+	// TODO:  在此添加专用代码和/或调用基类
+	if (pMsg->message == WM_KEYDOWN)
+	{
+		BOOL bCtrl = ::GetKeyState(VK_CONTROL) & 0x80;
+		switch (pMsg->wParam)
+		{
+		case 'a':
+		case 'A':
+			if (bCtrl)
+			{
+				SendDlgItemMessage(IDC_EDIT2, EM_SETSEL, 0, -1);
+			}
+			break;
+		default:
+			break;
+		}
+	}
+	return CDialogEx::PreTranslateMessage(pMsg);
+}
