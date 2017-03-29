@@ -30,7 +30,12 @@ CColorShowDialog::~CColorShowDialog()
 
 	}
 }
-
+BOOL CColorShowDialog::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+	this->SetWindowText(_T("ÑÕÉ«Ê¶±ð"));
+	return TRUE;
+}
 void CColorShowDialog::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
@@ -113,19 +118,19 @@ void CColorShowDialog::OnTimer(UINT_PTR nIDEvent)
 	int blue = GetBValue(color);
 	char *reds = new char[3], *greens = new char[3], *blues = new char[3];
 	_itoa(red, reds, 16); _itoa(green, greens, 16); _itoa(blue, blues, 16);
-	if (red < 10)
+	if (red < 16)
 	{
 		reds[1] = reds[0];
 		reds[0] = '0';
 		reds[2] = '\0';
 	}
-	if (green < 10)
+	if (green < 16)
 	{
 		greens[1] = greens[0];
 		greens[0] = '0';
 		greens[2] = '\0';
 	}
-	if (blue < 10)
+	if (blue < 16)
 	{
 		blues[1] = blues[0];
 		blues[0] = '0';
