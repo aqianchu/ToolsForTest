@@ -107,6 +107,7 @@ BEGIN_MESSAGE_MAP(C测试小工具Dlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON36, &C测试小工具Dlg::OnBnClickedButton36)
 	ON_BN_CLICKED(IDC_BUTTON37, &C测试小工具Dlg::OnBnClickedButton37)
 	ON_BN_CLICKED(IDC_BUTTON38, &C测试小工具Dlg::OnBnClickedButton38)
+	ON_BN_CLICKED(IDC_BUTTON39, &C测试小工具Dlg::OnBnClickedButton39)
 END_MESSAGE_MAP()
 
 
@@ -205,6 +206,11 @@ void C测试小工具Dlg::OnPaint()
 	{
 		CDialogEx::OnPaint();
 	}
+}
+
+void C测试小工具Dlg::OnDestroy()
+{
+	CDialogEx::OnDestroy();
 }
 
 //当用户拖动最小化窗口时系统调用此函数取得光标
@@ -508,4 +514,11 @@ void C测试小工具Dlg::OnBnClickedButton38()
 	// TODO:  在此添加控件通知处理程序代码
 	CMD5Dialog dialog;
 	dialog.DoModal();
+}
+
+
+void C测试小工具Dlg::OnBnClickedButton39()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	system("@adb pull /data/local/tmp/record.mp4");
 }

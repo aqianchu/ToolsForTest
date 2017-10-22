@@ -135,6 +135,17 @@ long DateDiff(tagDate date1, tagDate date2)
 	return delta;
 }
 
+BOOL GetStrFromTime(time_t iTimeStamp, char *pszTime)
+{
+	tm *pTmp = localtime(&iTimeStamp);
+	if (pTmp == NULL)
+	{
+		return FALSE;
+	}
+	sprintf(pszTime, "%d-%d-%d %d:%d:%d", pTmp->tm_year + 1900, pTmp->tm_mon + 1, pTmp->tm_mday, pTmp->tm_hour, pTmp->tm_min, pTmp->tm_sec);
+	return TRUE;
+}
+
 time_t StringToDatetime(char *str)
 {
 	tm tm_;

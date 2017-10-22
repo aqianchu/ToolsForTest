@@ -18,7 +18,7 @@ SYSTEMTIME TimetToSystemTime(time_t t);
 time_t SystemTimeToTimet(SYSTEMTIME st);
 SYSTEMTIME Time_tToSystemTime(time_t t);
 time_t SystemTimeToTime_t(const SYSTEMTIME& st);
-
+BOOL GetStrFromTime(time_t iTimeStamp, char *pszTime);
 char* hexstringToBytes(string s);
 
 

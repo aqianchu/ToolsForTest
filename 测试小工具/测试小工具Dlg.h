@@ -29,6 +29,7 @@ protected:
 	virtual BOOL OnInitDialog();
 	afx_msg void OnSysCommand(UINT nID, LPARAM lParam);
 	afx_msg void OnPaint();
+	afx_msg void OnDestroy();
 	afx_msg HCURSOR OnQueryDragIcon();
 	DECLARE_MESSAGE_MAP()
 public:
@@ -71,4 +72,5 @@ public:
 	afx_msg void OnBnClickedButton36();
 	afx_msg void OnBnClickedButton37();
 	afx_msg void OnBnClickedButton38();
+	afx_msg void OnBnClickedButton39();
 };

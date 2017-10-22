@@ -62,7 +62,6 @@ void CTimeReplaceDialog::OnBnClickedButton4()
 	GetDlgItem(IDC_EDIT3)->SetWindowTextW(result);
 }
 
-
 void CTimeReplaceDialog::OnBnClickedButton1()
 {
 	try {
@@ -72,12 +71,21 @@ void CTimeReplaceDialog::OnBnClickedButton1()
 			return;
 		}
 		char *s = CString2char(str);
+		int sLen = strlen(s);
+		char* tem = (char*)malloc((sLen)*sizeof(char));
+		strncpy(tem, s, sLen - 3);
+		tem[sLen - 3] = '\0';
 		long q;
-		sscanf(s, "%ld", &q);
+		sscanf(tem, "%ld", &q);
 		time_t t = (time_t)q;
 		char tmp[64];
 		strftime(tmp, sizeof(tmp), "%Y-%m-%d %X", localtime(&t));
-		tmp[38] = '\0';
+		int tmpLen = strlen(tmp);
+		tmp[tmpLen] = ':';
+		tmp[tmpLen + 1] = s[sLen - 3];
+		tmp[tmpLen + 2] = s[sLen - 2];
+		tmp[tmpLen + 3] = s[sLen - 1];
+		tmp[tmpLen + 4] = '\0';
 		CString result = StringToCString(CharToString(tmp));
 		GetDlgItem(IDC_EDIT2)->SetWindowTextW(result);
 	}
