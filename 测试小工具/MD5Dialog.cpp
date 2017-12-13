@@ -36,41 +36,50 @@ BEGIN_MESSAGE_MAP(CMD5Dialog, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON1, &CMD5Dialog::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
+void CMD5Dialog::onBnClick()
+{
+	CString cstr;
+	GetDlgItemText(IDC_EDIT1, cstr);
+	if (cstr.IsEmpty()) {
+		return;
+	}
+	string str = CStringToString(cstr);
+	string result = MD5(str).toStr();
+	CString cresult = StringToCString(result);
+	GetDlgItem(IDC_EDIT2)->SetWindowTextW(cresult);
+}
 
 // CMD5Dialog 消息处理程序
 
 void CMD5Dialog::OnBnClickedButton1()
 {
 	// TODO:  在此添加控件通知处理程序代码
-	CString str;
-	GetDlgItemText(IDC_EDIT1, str);
-	if (str.IsEmpty()) {
-		return;
-	}
-	char *source = CString2char(str);
-	unsigned char decrypt[16];
-	string result;
-	MD5_CTX md5;
+	onBnClick();
+}
 
-	MD5Init(&md5);
-	MD5Update(&md5,(unsigned char*) source, strlen((char *)source));
-	MD5Final(&md5, decrypt);
-	//Md5加密后的32位结果
-	//printf("\n加密前:%s\n加密后32位:", encrypt);
-	
-	//Md5加密后的32位结果
-	int i = 0;
-	for (i = 4; i<12; i++)
+
+BOOL CMD5Dialog::PreTranslateMessage(MSG* pMsg)
+{
+	// TODO:  在此添加专用代码和/或调用基类
+	int myID;
+	CWnd* pWnd = WindowFromPoint(pMsg->pt);
+	myID = pWnd->GetDlgCtrlID();
+
+	if (pMsg->message == WM_KEYDOWN)
 	{
-		printf("%02x", decrypt[i]);
+		switch (pMsg->wParam)
+		{
+		case VK_RETURN:
+			//bool event1 = myID == IDC_BUTTON1;
+			//if (event1){
+				//事件处理代码  
+				onBnClick();
+				return TRUE;
+			//}
+			break;
+		default:
+			break;
+		}
 	}
-
-	//Md5加密后的32位结果
-	for (i = 0; i<16; i++)
-	{
-		printf("%02x", decrypt[i]);
-	}
-
-	//CString cresult = StringToCString(CharToString((char*)decrypt));
-	//GetDlgItem(IDC_EDIT2)->SetWindowTextW(cresult);
+	return CDialogEx::PreTranslateMessage(pMsg);
 }

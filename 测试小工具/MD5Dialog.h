@@ -1,7 +1,8 @@
 #pragma once
 
-#include "Md5.h"
+#include "md5.h"
 #include "CUtils.h"
+#include <string>
 // CMD5Dialog ¶Ô»°¿ò
 
 class CMD5Dialog : public CDialogEx
@@ -21,4 +22,8 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButton1();
+	virtual BOOL PreTranslateMessage(MSG* pMsg);
+
+private:
+	void onBnClick();
 };

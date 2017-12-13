@@ -57,10 +57,10 @@
     <ClInclude Include="ColorShowDialog.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Md5.h">
+    <ClInclude Include="MD5Dialog.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MD5Dialog.h">
+    <ClInclude Include="md5.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -98,10 +98,10 @@
     <ClCompile Include="ColorShowDialog.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Md5.cpp">
+    <ClCompile Include="MD5Dialog.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MD5Dialog.cpp">
+    <ClCompile Include="md5.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

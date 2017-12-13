@@ -106,7 +106,7 @@
     <ClInclude Include="ColorShowDialog.h" />
     <ClInclude Include="CUtils.h" />
     <ClInclude Include="IntUtils.h" />
-    <ClInclude Include="Md5.h" />
+    <ClInclude Include="md5.h" />
     <ClInclude Include="MD5Dialog.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -123,7 +123,7 @@
     <ClCompile Include="ColorShowDialog.cpp" />
     <ClCompile Include="CUtils.cpp" />
     <ClCompile Include="IntUtils.cpp" />
-    <ClCompile Include="Md5.cpp" />
+    <ClCompile Include="md5.cpp" />
     <ClCompile Include="MD5Dialog.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
