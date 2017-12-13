@@ -22,7 +22,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedButton1();
-	virtual BOOL PreTranslateMessage(MSG* pMsg);
+	//virtual BOOL PreTranslateMessage(MSG* pMsg);
 
 private:
 	void onBnClick();

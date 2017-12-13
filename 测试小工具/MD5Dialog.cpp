@@ -58,7 +58,7 @@ void CMD5Dialog::OnBnClickedButton1()
 }
 
 
-BOOL CMD5Dialog::PreTranslateMessage(MSG* pMsg)
+/*BOOL CMD5Dialog::PreTranslateMessage(MSG* pMsg)
 {
 	// TODO:  在此添加专用代码和/或调用基类
 	int myID;
@@ -83,3 +83,4 @@ BOOL CMD5Dialog::PreTranslateMessage(MSG* pMsg)
 	}
 	return CDialogEx::PreTranslateMessage(pMsg);
 }
+*/
